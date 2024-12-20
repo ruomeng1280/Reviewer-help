@@ -1,0 +1,56 @@
+{
+  "name": "review-helper",
+  "version": "1.0.0",
+  "description": "期末复习助手",
+  "author": "若梦 <a18752835838@163.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ electron .",
+    "pack": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ electron-builder --dir",
+    "dist": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ electron-builder",
+    "dist-win": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ electron-builder --win"
+  },
+  "build": {
+    "appId": "com.review.helper",
+    "productName": "期末复习助手",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "main.js",
+      "assets/**/*",
+      "sounds/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "icon": "assets/icon.png"
+    },
+    "asar": false,
+    "forceCodeSigning": false
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^25.0.0",
+    "electron-builder": "^24.4.0"
+  },
+  "config": {
+    "registry": "https://registry.npmmirror.com",
+    "ELECTRON_MIRROR": "https://npmmirror.com/mirrors/electron/",
+    "ELECTRON_BUILDER_BINARIES_MIRROR": "https://npmmirror.com/mirrors/electron-builder-binaries/"
+  },
+  "keywords": [],
+  "license": "ISC"
+}

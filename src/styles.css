@@ -1,0 +1,219 @@
+.section {
+    margin-bottom: 2rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.dice-container {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 1rem;
+}
+
+.dice {
+    font-size: 5rem;
+    margin: 1rem;
+    animation-duration: 1s;
+}
+
+.task-list, .rewards-list {
+    margin: 1rem 0;
+}
+
+.task-card, .reward-card {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dice-spinning {
+    animation: rollDice 1.2s ease-out;
+}
+
+@keyframes rollDice {
+    0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+    20% { transform: rotateX(720deg) rotateY(360deg) rotateZ(180deg) scale(1.2); }
+    40% { transform: rotateX(-360deg) rotateY(-720deg) rotateZ(-180deg) scale(0.8); }
+    60% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg) scale(1.2); }
+    80% { transform: rotateX(-180deg) rotateY(-360deg) rotateZ(-90deg) scale(0.9); }
+    100% { transform: rotateX(0) rotateY(0) rotateZ(0) scale(1); }
+}
+
+.progress {
+    height: 2rem;
+}
+
+.stats-container .card {
+    text-align: center;
+}
+
+.stats-container .card-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* 提示框样式 */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.toast-warning {
+    background: linear-gradient(45deg, #ffc107, #fd7e14);
+}
+
+.toast-info {
+    background: linear-gradient(45deg, #17a2b8, #0dcaf0);
+}
+
+/* 点数更新动画 */
+.points-update {
+    animation: pointsUpdate 0.6s ease-out;
+}
+
+@keyframes pointsUpdate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #ffd700; }
+    100% { transform: scale(1); }
+}
+
+/* 粒子动画 */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* 任务卡片状态样式 */
+.task-card {
+    transition: all 0.3s ease;
+}
+
+.task-card.completed {
+    background-color: #f8f9fa;
+}
+
+.task-card.dice-used {
+    opacity: 0.8;
+}
+
+.badge {
+    font-size: 0.75em;
+    padding: 0.4em 0.8em;
+}
+
+/* 添加一些动画效��� */
+.badge {
+    transition: all 0.3s ease;
+}
+
+.badge.bg-primary {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 连抽结果样式 */
+.multi-roll-summary {
+    padding: 1rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.result-item {
+    background: linear-gradient(45deg, #4481eb, #04befe);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: popIn 0.3s ease-out;
+}
+
+.total-points {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 1rem;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 按钮组样式 */
+.btn-group {
+    gap: 10px;
+}
+
+.btn-group .btn {
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+}
+
+.btn-group .btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* 删除按钮样式 */
+.btn-outline-danger {
+    padding: 0.25rem 0.5rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.task-card:hover .btn-outline-danger,
+.reward-card:hover .btn-outline-danger {
+    opacity: 1;
+}
+
+.btn-outline-danger:hover {
+    transform: scale(1.1);
+} 

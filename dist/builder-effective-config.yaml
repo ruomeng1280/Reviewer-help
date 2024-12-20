@@ -1,0 +1,26 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.review.helper
+productName: 期末复习助手
+files:
+  - filter:
+      - src/**/*
+      - main.js
+      - assets/**/*
+      - sounds/**/*
+win:
+  target: nsis
+  icon: assets/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+mac:
+  icon: assets/icon.icns
+linux:
+  icon: assets/icon.png
+asar: false
+forceCodeSigning: false
+electronVersion: 25.9.8
