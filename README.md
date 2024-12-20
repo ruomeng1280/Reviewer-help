@@ -1,4 +1,4 @@
-#期末复习助手 (Final Exam Review Helper)
+# 期末复习助手 (Final Exam Review Helper)
 
 一个基于 Electron 的桌面应用，帮助学生更好地规划和激励自己的复习进程。通过游戏化的方式，让复习变得更有趣和高效。
 
